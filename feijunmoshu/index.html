@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>非君莫属txt-全文阅读与小说资源分享指南</title>
+    <meta name="description" content="非君莫属txt小说在线阅读与下载指南，提供非君莫属全文内容介绍、主要角色解析、章节概览、阅读方式与常见问题解答，帮助读者快速找到心仪的阅读资源。">
+    <meta name="keywords" content="非君莫属txt,非君莫属小说,非君莫属全文,非君莫属下载,非君莫属在线阅读">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+            background: #f7f4f0;
+            color: #333;
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* header */
+        .site-header {
+            background: linear-gradient(135deg, #6b3a6f, #8e5a8f);
+            padding: 18px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .logo a {
+            color: #fff;
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+        .logo span {
+            font-size: 0.9rem;
+            font-weight: 300;
+            margin-left: 10px;
+            opacity: 0.85;
+        }
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 22px;
+        }
+        .main-nav a {
+            color: #f0e6f0;
+            text-decoration: none;
+            font-size: 0.95rem;
+            padding: 6px 2px;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+        .main-nav a:hover {
+            border-bottom-color: #fff;
+            color: #fff;
+        }
+        /* hero 首屏 */
+        .hero {
+            background: linear-gradient(145deg, #f2e8f2 0%, #e4d5e4 100%);
+            padding: 60px 0 50px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.4rem;
+            color: #4a2a4a;
+            margin-bottom: 12px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .hero .subtitle {
+            font-size: 1.1rem;
+            color: #6d4b6d;
+            max-width: 700px;
+            margin: 0 auto 28px;
+            line-height: 1.8;
+        }
+        .hero-actions {
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .btn-primary {
+            background: #6b3a6f;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: #552a58;
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            border: 1.5px solid #6b3a6f;
+            color: #6b3a6f;
+            background: transparent;
+        }
+        .btn-outline:hover {
+            background: #6b3a6f;
+            color: #fff;
+        }
+        /* 内容区通用 */
+        .section {
+            padding: 50px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #4a2a4a;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .section-sub {
+            text-align: center;
+            color: #7a627a;
+            margin-bottom: 40px;
+            font-size: 0.95rem;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 10px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-top: 3px solid #8e5a8f;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            color: #4a2a4a;
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+        }
+        .card p {
+            color: #555;
+            font-size: 0.92rem;
+            line-height: 1.7;
+        }
+        /* 书籍介绍区 */
+        .book-intro {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            background: #fff;
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin-top: 20px;
+        }
+        .book-cover {
+            flex-shrink: 0;
+            width: 180px;
+            height: 250px;
+            background: linear-gradient(135deg, #9c6b9e, #6b3a6f);
+            border-radius: 8px 8px 8px 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+            box-shadow: 0 8px 20px rgba(107,58,111,0.3);
+            writing-mode: vertical-lr;
+            text-orientation: upright;
+            padding: 10px;
+        }
+        .book-info {
+            flex: 1;
+        }
+        .book-info h2 {
+            color: #4a2a4a;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #f0e0f0;
+            padding-bottom: 10px;
+        }
+        .book-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 15px 0;
+            font-size: 0.9rem;
+            color: #7a627a;
+        }
+        .book-meta span strong {
+            color: #4a2a4a;
+        }
+        .book-desc {
+            margin-top: 15px;
+            color: #444;
+            line-height: 1.9;
+        }
+        /* 章节列表 */
+        .chapter-list {
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+        }
+        .chapter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .chapter-item {
+            background: #faf5fa;
+            border-radius: 8px;
+            padding: 10px 16px;
+            font-size: 0.9rem;
+            color: #4a2a4a;
+            text-align: center;
+            border: 1px solid #e8d5e8;
+            transition: 0.2s;
+        }
+        .chapter-item:hover {
+            background: #6b3a6f;
+            color: #fff;
+            cursor: pointer;
+            border-color: #6b3a6f;
+        }
+        /* 角色 */
+        .characters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+        .character-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 22px;
+            border-left: 4px solid #8e5a8f;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+        }
+        .character-card h3 {
+            color: #4a2a4a;
+            margin-bottom: 8px;
+        }
+        .character-card p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        /* 阅读方式 */
+        .read-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .method-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 22px;
+            text-align: center;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+        }
+        .method-item .icon {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        .method-item h3 {
+            color: #4a2a4a;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+        .method-item p {
+            font-size: 0.88rem;
+            color: #666;
+        }
+        /* FAQ */
+        .faq-list {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: #fff;
+            border-radius: 10px;
+            margin-bottom: 14px;
+            padding: 20px 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .faq-item h3 {
+            color: #4a2a4a;
+            font-size: 1rem;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .faq-item h3::before {
+            content: "Q";
+            background: #6b3a6f;
+            color: #fff;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+        .faq-item p {
+            font-size: 0.9rem;
+            color: #555;
+            padding-left: 32px;
+        }
+        /* 注意事项 */
+        .notice-box {
+            background: #fff8e6;
+            border: 1px solid #f0d58c;
+            border-radius: 12px;
+            padding: 25px 30px;
+            margin-top: 30px;
+        }
+        .notice-box h3 {
+            color: #8a6d1a;
+            margin-bottom: 12px;
+        }
+        .notice-box ul {
+            padding-left: 20px;
+            color: #6b5a2a;
+            font-size: 0.92rem;
+        }
+        .notice-box li {
+            margin-bottom: 6px;
+        }
+        /* footer */
+        .site-footer {
+            background: #3d213d;
+            color: #cbb5cb;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.85rem;
+            margin-top: 40px;
+        }
+        .site-footer a {
+            color: #e0c8e0;
+            text-decoration: none;
+        }
+        .site-footer a:hover {
+            text-decoration: underline;
+        }
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .book-intro {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 25px;
+            }
+            .book-cover {
+                width: 140px;
+                height: 200px;
+                font-size: 1.1rem;
+            }
+            .book-info h2 {
+                font-size: 1.4rem;
+            }
+            .section {
+                padding: 35px 0;
+            }
+            .main-nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin-top: 8px;
+            }
+            .header-inner {
+                justify-content: center;
+                text-align: center;
+            }
+            .logo {
+                width: 100%;
+                text-align: center;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            .chapter-grid {
+                grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            }
+        }
+        @media (max-width: 480px) {
+            .hero {
+                padding: 40px 0;
+            }
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            .btn {
+                padding: 8px 20px;
+                font-size: 0.9rem;
+            }
+            .book-meta {
+                flex-direction: column;
+                gap: 5px;
+            }
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <a href="#">非君莫属<span>小说阅读站</span></a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#intro">小说介绍</a></li>
+                    <li><a href="#chapters">章节预览</a></li>
+                    <li><a href="#characters">主要角色</a></li>
+                    <li><a href="#read">阅读方式</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 首屏 Hero -->
+        <section class="hero">
+            <div class="container">
+                <h1>非君莫属txt</h1>
+                <p class="subtitle">一部关于深情守候与命运羁绊的现代都市情感小说，为你整理全文阅读指引、章节概览与资源获取方式。</p>
+                <div class="hero-actions">
+                    <a href="#chapters" class="btn btn-primary">查看章节预览</a>
+                    <a href="#read" class="btn btn-outline">阅读方式说明</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 书籍介绍 -->
+        <section class="section" id="intro">
+            <div class="container">
+                <h2 class="section-title">小说《非君莫属》简介</h2>
+                <p class="section-sub">了解故事背景、主线与看点</p>
+                <div class="book-intro">
+                    <div class="book-cover">非君莫属</div>
+                    <div class="book-info">
+                        <h2>非君莫属</h2>
+                        <div class="book-meta">
+                            <span><strong>类别：</strong>现代言情 / 都市情感</span>
+                            <span><strong>风格：</strong>深情 / 治愈 / 微虐</span>
+                            <span><strong>篇幅：</strong>中长篇（约60万字）</span>
+                            <span><strong>状态：</strong>已完结</span>
+                        </div>
+                        <p class="book-desc">
+                            《非君莫属》讲述了一段从校园延续至职场的感情故事。女主角林若笙与男主角陆之衡因一次意外相遇，此后多年间彼此错过又不断重逢。书名“非君莫属”既是对爱情的坚定选择，也暗含了人物在命运中的挣扎与成长。小说以细腻的笔触描绘了人物内心的情感变化，既有甜蜜的互动，也有现实的考验。作品整体节奏张弛有度，情感描写真实自然，深受现代言情小说读者的喜爱。
+                        </p>
+                        <p class="book-desc" style="margin-top: 10px;">
+                            故事主线围绕两人从青涩到成熟的蜕变，探讨了信任、陪伴与自我成长等主题。如果你喜欢节奏舒缓、情感细腻的现代言情作品，这部小说值得加入书单。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 章节概览 -->
+        <section class="section" id="chapters" style="background: #f0e8f0;">
+            <div class="container">
+                <h2 class="section-title">章节概览</h2>
+                <p class="section-sub">以下为部分章节标题示意，帮助快速了解故事推进节奏</p>
+                <div class="chapter-list">
+                    <div class="chapter-grid">
+                        <div class="chapter-item">第1章 初遇</div>
+                        <div class="chapter-item">第2章 同桌的你</div>
+                        <div class="chapter-item">第3章 隐秘心事</div>
+                        <div class="chapter-item">第4章 毕业前夜</div>
+                        <div class="chapter-item">第5章 各自远方</div>
+                        <div class="chapter-item">第6章 重逢</div>
+                        <div class="chapter-item">第7章 职场交锋</div>
+                        <div class="chapter-item">第8章 误会丛生</div>
+                        <div class="chapter-item">第9章 渐行渐近</div>
+                        <div class="chapter-item">第10章 告白</div>
+                        <div class="chapter-item">第11章 非君莫属</div>
+                        <div class="chapter-item">第12章 执子之手</div>
+                    </div>
+                    <p style="margin-top: 20px; font-size: 0.9rem; color: #7a627a; text-align: center;">（完整章节请通过正规阅读平台获取）</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 主要角色 -->
+        <section class="section" id="characters">
+            <div class="container">
+                <h2 class="section-title">主要角色</h2>
+                <p class="section-sub">走进人物的内心世界</p>
+                <div class="characters">
+                    <div class="character-card">
+                        <h3>陆之衡</h3>
+                        <p>男主角，性格内敛沉稳，外冷内热。在事业上果断睿智，面对感情却显得克制而深情。始终默默守护女主角，是“非君莫属”这句话最坚定的践行者。</p>
+                    </div>
+                    <div class="character-card">
+                        <h3>林若笙</h3>
+                        <p>女主角，温柔坚韧的现代女性。她独立、有主见，在感情中经历过迷茫与犹豫，最终勇敢面对自己的内心，做出了无悔的选择。</p>
+                    </div>
+                    <div class="character-card">
+                        <h3>沈言</h3>
+                        <p>男配角，女主角的大学同学，性格开朗直率，曾对女主展开追求。他的存在让男女主角之间的情感更加曲折，也是推动剧情发展的关键人物。</p>
+                    </div>
+                    <div class="character-card">
+                        <h3>苏念</h3>
+                        <p>女配角，女主角的闺蜜，聪明热心，常常在关键时刻为女主提供建议与支持，是故事中的温暖担当。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 阅读方式与资源 -->
+        <section class="section" id="read" style="background: #f0e8f0;">
+            <div class="container">
+                <h2 class="section-title">阅读方式与资源获取</h2>
+                <p class="section-sub">如何获取《非君莫属》txt全文？以下为常见途径说明</p>
+                <div class="read-methods">
+                    <div class="method-item">
+                        <div class="icon">📱</div>
+                        <h3>正版阅读平台</h3>
+                        <p>起点中文网、QQ阅读、番茄小说等平台搜索书名即可在线阅读。支持正版创作，部分平台提供txt下载功能。</p>
+                    </div>
+                    <div class="method-item">
+                        <div class="icon">🔍</div>
+                        <h3>搜索引擎检索</h3>
+                        <p>使用“非君莫属 txt 下载”等关键词搜索，可找到部分书友分享的资源帖。注意甄别网站安全性，避免下载恶意文件。</p>
+                    </div>
+                    <div class="method-item">
+                        <div class="icon">📚</div>
+                        <h3>电子书商店</h3>
+                        <p>当当云阅读、微信读书等平台通常有epub或txt格式的正版电子书，购买后可在多设备同步阅读。</p>
+                    </div>
+                    <div class="method-item">
+                        <div class="icon">💬</div>
+                        <h3>书友交流群</h3>
+                        <p>小说贴吧、豆瓣小组或读者群中常有热心书友分享资源，但更推荐通过正规渠道获取，支持作者创作。</p>
+                    </div>
+                </div>
+
+                <div class="notice-box">
+                    <h3>⚠️ 阅读提示</h3>
+                    <ul>
+                        <li>请优先选择正版渠道阅读和下载，尊重作者劳动成果。</li>
+                        <li>若通过搜索引擎找到下载链接，注意确认文件格式与来源，防止病毒或钓鱼网站。</li>
+                        <li>txt 格式适合在各类电子设备上阅读，但排版可能不如正版App精美。</li>
+                        <li>部分网站提供“非君莫属全文免费阅读”，但可能存在章节错乱或弹窗广告，体验参差不齐。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section" id="faq">
+            <div class="container">
+                <h2 class="section-title">常见问题</h2>
+                <p class="section-sub">关于《非君莫属》你可能想了解的问题</p>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h3>《非君莫属》的作者是谁？</h3>
+                        <p>该小说为网络签约作者所著，具体笔名请以阅读平台显示的信息为准。不同平台可能因授权不同而显示略有差异。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>小说是BE还是HE结局？</h3>
+                        <p>整体而言这是一部结局圆满的治愈系作品，但过程有波折与考验。具体情节发展建议亲自阅读体验，避免剧透影响阅读感受。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>txt版本和在线版本内容有区别吗？</h3>
+                        <p>一般情况下，未经修改的txt版本与在线版本内容一致。但部分网络流传版本可能存在缺章或乱码，建议下载后简单核对目录。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>非君莫属有实体书出版吗？</h3>
+                        <p>部分热门网络小说会进行实体书出版，但具体出版信息需要关注出版社或作者官方动态。目前没有确切公开的实体书消息。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>在哪里可以免费阅读非君莫属？</h3>
+                        <p>部分阅读平台提供限时免费或前几十章免费阅读。也有一些书友分享的txt资源可以免费获取，但请留意版权问题，支持正版。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>小说大概多长？需要多久能读完？</h3>
+                        <p>全文约60万字左右，按照正常阅读速度（每分钟400-500字），大约需要20-25小时。利用碎片时间阅读的话，一两周可以读完。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 相关推荐 -->
+        <section class="section" style="background: #f0e8f0; padding-top: 30px; padding-bottom: 30px;">
+            <div class="container">
+                <h2 class="section-title" style="font-size: 1.4rem;">类似风格小说推荐</h2>
+                <p class="section-sub" style="margin-bottom: 25px;">如果你喜欢《非君莫属》，以下作品也可能符合你的口味</p>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>何以笙箫默</h3>
+                        <p>经典现代言情，讲述一段跨越七年的深情等待与重逢故事，情感细腻动人。</p>
+                    </div>
+                    <div class="card">
+                        <h3>温暖的弦</h3>
+                        <p>商战背景下的爱情纠葛，男女主角在事业与情感中反复试探，最终确认彼此心意。</p>
+                    </div>
+                    <div class="card">
+                        <h3>最美遇见你</h3>
+                        <p>校园到都市的成长型爱情，文风轻松温暖，充满治愈力量。</p>
+                    </div>
+                    <div class="card">
+                        <h3>你是我心内的一首歌</h3>
+                        <p>以音乐为线索的浪漫故事，强调缘分与命中注定，氛围感十足。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>本站为《非君莫属》小说信息分享与阅读指南页面，致力于提供有价值的书籍介绍与获取途径说明。</p>
+            <p style="margin-top: 8px;">📖 支持正版阅读 · 尊重创作 · <a href="#">关于本站</a> · <a href="#">联系方式</a></p>
+        </div>
+    </footer>
+</body>
+</html>
