@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fulao2官方网 - 最新官方入口与使用指南</title>
+    <meta name="description" content="fulao2官方网，提供官方应用下载、版本更新、功能说明及使用帮助。了解最新动态与安全提醒，获取最准确的官方信息。">
+    <meta name="keywords" content="fulao2官方网,fulao2,官方入口,应用下载,版本更新,使用指南">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f7f9fc;
+            color: #1e2a3a;
+            line-height: 1.6;
+        }
+        .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* header */
+        .site-header {
+            background: #0b1a2f;
+            padding: 16px 0;
+            border-bottom: 4px solid #2b6f9e;
+        }
+        .header-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-icon {
+            background: #2b6f9e;
+            color: white;
+            font-weight: 700;
+            font-size: 1.4rem;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+        .logo-text {
+            color: white;
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        .logo-text span {
+            color: #bcd9f0;
+            font-weight: 300;
+        }
+        .main-nav ul {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        .main-nav a {
+            color: #dce9f5;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 0;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+        .main-nav a:hover {
+            border-bottom-color: #6ab0e6;
+            color: white;
+        }
+
+        /* hero 首屏 */
+        .hero {
+            background: linear-gradient(145deg, #f0f6fe 0%, #e2edf9 100%);
+            padding: 48px 0;
+            border-bottom: 1px solid #d8e2ed;
+        }
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
+        }
+        .hero-content {
+            flex: 1 1 350px;
+        }
+        .hero-content h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0b1a2f;
+            margin-bottom: 18px;
+            line-height: 1.2;
+        }
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 22px;
+            color: #2c4058;
+        }
+        .badge-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .badge {
+            background: white;
+            border-radius: 30px;
+            padding: 10px 22px;
+            font-weight: 600;
+            color: #0b1a2f;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            border: 1px solid #cbd8e6;
+            font-size: 0.95rem;
+        }
+        .hero-cta {
+            background: #2b6f9e;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: default;
+            display: inline-block;
+            margin-top: 12px;
+            box-shadow: 0 8px 18px rgba(43,111,158,0.12);
+        }
+        .hero-visual {
+            flex: 0 0 280px;
+            background: #ffffffd9;
+            border-radius: 30px;
+            padding: 28px 20px;
+            border: 1px solid white;
+            box-shadow: 0 20px 30px -20px rgba(0,0,0,0.2);
+            backdrop-filter: blur(2px);
+            text-align: center;
+        }
+        .hero-visual .version-big {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #1b4c72;
+        }
+        .hero-visual .version-label {
+            font-weight: 500;
+            color: #4d6a86;
+            letter-spacing: 1px;
+        }
+
+        /* 信息卡片区域 */
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 650;
+            margin: 40px 0 20px;
+            color: #0b1a2f;
+            border-left: 6px solid #2b6f9e;
+            padding-left: 18px;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin: 20px 0 30px;
+        }
+        .card {
+            background: white;
+            border-radius: 18px;
+            padding: 24px 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+            border: 1px solid #e3eaf2;
+            transition: 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px -10px rgba(0,0,0,0.1);
+            border-color: #b9d4ec;
+        }
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1b3c58;
+        }
+        .card p {
+            color: #3e556b;
+            font-size: 0.95rem;
+        }
+        .card .small-meta {
+            color: #6c7e92;
+            font-size: 0.8rem;
+            margin-top: 12px;
+            display: inline-block;
+            background: #f0f5fa;
+            padding: 3px 10px;
+            border-radius: 30px;
+        }
+
+        /* 双栏布局: 最新动态 + 侧边FAQ */
+        .info-cols {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        .col-main {
+            flex: 2 1 400px;
+        }
+        .col-side {
+            flex: 1 1 250px;
+            background: #eef4fa;
+            padding: 20px;
+            border-radius: 24px;
+            border: 1px solid #d9e5f0;
+        }
+        .update-list {
+            list-style: none;
+            background: white;
+            border-radius: 16px;
+            padding: 16px 20px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.02);
+        }
+        .update-list li {
+            padding: 14px 0;
+            border-bottom: 1px solid #e7eef6;
+            display: flex;
+            gap: 15px;
+        }
+        .update-list li:last-child {
+            border-bottom: none;
+        }
+        .update-date {
+            font-weight: 600;
+            color: #2b6f9e;
+            min-width: 70px;
+        }
+        .col-side h3 {
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            color: #1a3347;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        .faq-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: #0e2d47;
+        }
+        .faq-item p {
+            font-size: 0.9rem;
+            color: #355066;
+        }
+
+        /* 下载/平台卡片区 */
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 18px;
+            margin: 25px 0 30px;
+        }
+        .platform-item {
+            background: white;
+            border-radius: 16px;
+            padding: 20px 15px;
+            text-align: center;
+            border: 1px solid #d7e2ed;
+        }
+        .platform-item .platform-name {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #0b1a2f;
+            margin-bottom: 6px;
+        }
+        .platform-item .tag {
+            background: #e3edf7;
+            color: #1b4c72;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            display: inline-block;
+        }
+
+        /* 说明区块 */
+        .notice-box {
+            background: #fff8e7;
+            border-left: 8px solid #d99e2b;
+            padding: 24px 25px;
+            border-radius: 12px;
+            margin: 35px 0;
+            box-shadow: 0 8px 12px rgba(0,0,0,0.02);
+        }
+        .notice-box h3 {
+            color: #7a5800;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        /* 常见问题 */
+        .faq-main {
+            margin: 30px 0 20px;
+        }
+        .faq-main details {
+            background: white;
+            border-radius: 14px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            border: 1px solid #dce6f0;
+        }
+        .faq-main summary {
+            font-weight: 600;
+            cursor: pointer;
+            color: #0e2d47;
+        }
+        .faq-main p {
+            margin-top: 12px;
+            color: #2f465d;
+        }
+
+        /* footer */
+        .site-footer {
+            background: #0b1a2f;
+            color: #b7c9db;
+            padding: 30px 0;
+            margin-top: 30px;
+            border-top: 4px solid #2b6f9e;
+        }
+        .footer-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 15px;
+            font-size: 0.9rem;
+        }
+        .footer-inner a {
+            color: #b7c9db;
+            text-decoration: none;
+        }
+        .footer-inner a:hover {
+            color: white;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .main-nav ul {
+                justify-content: center;
+                gap: 18px;
+            }
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            .hero-grid {
+                flex-direction: column;
+            }
+            .hero-visual {
+                flex: 1 1 auto;
+                width: 100%;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .col-side {
+                flex: 1 1 100%;
+            }
+        }
+        @media (max-width: 480px) {
+            .logo-text {
+                font-size: 1.3rem;
+            }
+            .badge-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .platform-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="wrapper header-inner">
+            <div class="logo-area">
+                <div class="logo-icon">F2</div>
+                <div class="logo-text">fulao2<span>官方网</span></div>
+            </div>
+            <nav class="main-nav" aria-label="主导航">
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">官方下载</a></li>
+                    <li><a href="#">版本动态</a></li>
+                    <li><a href="#">使用帮助</a></li>
+                    <li><a href="#">安全公告</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 首屏 Hero -->
+        <section class="hero">
+            <div class="wrapper hero-grid">
+                <div class="hero-content">
+                    <h1>fulao2官方网 · 唯一权威入口</h1>
+                    <p>获取 fulao2 官方应用、版本更新、使用说明与安全提醒。我们提供最准确的服务信息，避免第三方误导。</p>
+                    <div class="badge-group">
+                        <span class="badge">✅ 官方认证</span>
+                        <span class="badge">🔄 版本更新</span>
+                        <span class="badge">🛡️ 安全无忧</span>
+                    </div>
+                    <div class="hero-cta">查看官方指南</div>
+                </div>
+                <div class="hero-visual">
+                    <div class="version-big">v2.0</div>
+                    <div class="version-label">当前稳定版</div>
+                    <div style="margin: 15px 0 5px; color: #1e3f5f;">官方通道 · 持续更新</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 核心服务卡片 -->
+        <div class="wrapper">
+            <h2 class="section-title">fulao2 官方服务</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>📦 官方下载中心</h3>
+                    <p>提供 fulao2 各平台安装包，全部经过完整性校验，无篡改、无附加组件。支持 Windows / macOS / Android 等。</p>
+                    <span class="small-meta">最新安装包 2025.03</span>
+                </div>
+                <div class="card">
+                    <h3>🔄 版本历史</h3>
+                    <p>记录每次迭代的功能改进、性能优化与问题修复。用户可了解 fulao2 的成长轨迹与后续规划。</p>
+                    <span class="small-meta">最近更新 2.0.1</span>
+                </div>
+                <div class="card">
+                    <h3>🧰 使用指南</h3>
+                    <p>从安装到配置，从基础操作到高级技巧，官方编写的中文图文教程，帮您快速上手 fulao2。</p>
+                    <span class="small-meta">新手引导</span>
+                </div>
+                <div class="card">
+                    <h3>🔐 账号与安全</h3>
+                    <p>官方账号绑定、双重验证建议、防钓鱼须知。我们重视您的数据安全，请认准本域名。</p>
+                    <span class="small-meta">安全公告</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 双栏：动态+侧边FAQ -->
+        <div class="wrapper info-cols">
+            <div class="col-main">
+                <h2 style="font-size: 1.6rem; font-weight: 600; margin-bottom: 10px;">📣 官方动态</h2>
+                <ul class="update-list">
+                    <li><span class="update-date">2025-03-20</span> fulao2 v2.0.1 发布，优化连接稳定性，修复若干反馈问题。</li>
+                    <li><span class="update-date">2025-03-08</span> 官方社区上线，提供用户交流与建议收集渠道。</li>
+                    <li><span class="update-date">2025-02-14</span> 新版帮助中心文档全面更新，新增常见错误码说明。</li>
+                    <li><span class="update-date">2025-01-30</span> 安全提示：谨防假冒 fulao2 安装包，请只从本站获取文件。</li>
+                </ul>
+            </div>
+            <aside class="col-side">
+                <h3>快速答疑</h3>
+                <div class="faq-item">
+                    <h4>如何确认正版 fulao2？</h4>
+                    <p>官方唯一网址为本站域名，应用内可验证数字签名。任何其他下载来源均非官方。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>软件无法启动？</h4>
+                    <p>请检查系统版本要求，并尝试以管理员权限运行。若仍异常，可查阅帮助中心。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>是否支持移动端？</h4>
+                    <p>目前提供 Android 版本，iOS 版本正在内部测试。请关注官方动态。</p>
+                </div>
+            </aside>
+        </div>
+
+        <!-- 平台卡片 -->
+        <div class="wrapper">
+            <h2 class="section-title">支持平台</h2>
+            <div class="platform-grid">
+                <div class="platform-item">
+                    <div class="platform-name">Windows</div>
+                    <div class="tag">x64 / arm64</div>
+                </div>
+                <div class="platform-item">
+                    <div class="platform-name">macOS</div>
+                    <div class="tag">Intel & Apple</div>
+                </div>
+                <div class="platform-item">
+                    <div class="platform-name">Android</div>
+                    <div class="tag">8.0+</div>
+                </div>
+                <div class="platform-item">
+                    <div class="platform-name">Linux</div>
+                    <div class="tag">主流发行版</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 安全公告 -->
+        <div class="wrapper">
+            <div class="notice-box">
+                <h3>⚠️ 官方安全提醒</h3>
+                <p>近期发现非官方渠道传播伪造的“fulao2”安装包，可能携带恶意代码。请务必认准本站与官方验证信息。官方不会通过弹窗或私信索取密码。任何以“内部版”、“破解版”为名义的下载均与官方无关，请用户提高警惕，谨防财产损失。</p>
+            </div>
+        </div>
+
+        <!-- FAQ 区块 -->
+        <div class="wrapper faq-main">
+            <h2 class="section-title">常见问题（FAQ）</h2>
+            <details>
+                <summary>fulao2官方网和其他下载站有什么不同？</summary>
+                <p>本站为 fulao2 官方运营的唯一信息发布平台，所有安装包均经过官方签名与完整性校验，同时提供最准确的更新日志和售后服务指引。</p>
+            </details>
+            <details>
+                <summary>如何获取fulao2最新版本信息？</summary>
+                <p>您可以直接访问本站首页查看动态，或在官方应用内检查更新。我们也会通过官方邮件（需订阅）发送更新摘要。</p>
+            </details>
+            <details>
+                <summary>软件使用中遇到bug怎么办？</summary>
+                <p>建议先查阅帮助中心的“已知问题”板块，若未能解决，请通过官方反馈渠道提交系统日志、版本号与复现步骤，我们会尽快处理。</p>
+            </details>
+            <details>
+                <summary>fulao2是否收集个人隐私？</summary>
+                <p>我们仅收集运行所必需的基础匿名数据以改进体验，具体请参阅隐私条款。官方承诺不会出售用户数据。</p>
+            </details>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrapper footer-inner">
+            <div>© 2025 fulao2官方网 · 版权所有</div>
+            <div>
+                <a href="#">隐私政策</a> &nbsp;|&nbsp; 
+                <a href="#">服务条款</a> &nbsp;|&nbsp; 
+                <a href="#">联系官方</a>
+            </div>
+            <div>健康使用 · 适度浏览</div>
+        </div>
+    </footer>
+</body>
+</html>
